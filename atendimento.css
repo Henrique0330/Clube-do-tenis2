@@ -1,0 +1,347 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  ---body-color: #eff0f4;
+  ---sidebar-color: #fff;
+  ---primary-color: #695cfe;
+  ---primary-color-light: #f6f5ff;
+  ---toggle-color: #dddddd84;
+  ---text-color: #707070;
+
+
+  ---trans-02: # all 0.2s ease;
+  ---trans-03: # all 0.3s ease;
+  ---trans-04: # all 0.4s ease;
+  ---trans-05: # all 0.5s ease;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  height: 100vh;
+  background: var(---body-color);
+  transition: var(---trans-04);
+}
+
+body.dark {
+  ---body-color: #18191A;
+  ---sidebar-color: #242526;
+  ---primary-color: #3A3B3C;
+  ---primary-color-light: #3A3B3C;
+  ---toggle-color: #fff;
+  ---text-color: #CCC;
+}
+
+/* === Config. da logo */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(---sidebar-color);
+  transition: var(---trans-05);
+  z-index: 100;
+}
+
+.sidebar.close {
+  width: 88px;
+  /*transition: var(---trans-04)*/
+}
+
+/* === responsividade === */
+/*.sidebar{
+    width: 88px;
+    overflow: visible;
+  }*/
+.sidebar .text {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+.sidebar.image {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li {
+  height: 50px;
+
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.sidebar li .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  color: var(---text-color);
+  transition: var(---trans-02);
+
+}
+
+.sidebar .header-menu {
+  position: relative;
+}
+
+.sidebar .image-text img {
+  width: 40px;
+  border-radius: 6px;
+}
+
+.sidebar .header-menu .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu .image-text .header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* remover .header-text quando nav estiver fechada*/
+.close .image-text .header-text {
+  display: none;
+}
+
+.header-text .name {
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(---text-color);
+}
+
+.sidebar .header-menu .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background: var(---primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(---sidebar-color);
+  font-size: 22px;
+  transition: var(---trans-04);
+}
+
+.sidebar.close .header-menu .toggle {
+  transform: translateY(-50%);
+}
+
+body.dark .sidebar .header-menu .toggle {
+  color: var(---text-color);
+}
+
+.sidebar .search-box {
+  background: var(---primary-color-light);
+}
+
+.search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  background: var(---primary-color-light);
+}
+
+.sidebar li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(---trans-04)
+}
+
+.sidebar li a:hover {
+  background: var(---primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: var(---sidebar-color);
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-bar .mode {
+  position: relative;
+  background: var(---primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+  transition: var(---trans-03);
+  border-radius: 6px;
+}
+
+.menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(---toggle-color);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(---sidebar-color);
+  transition: var(---trans-03);
+}
+
+body.dark .switch::before {
+  left: 24px;
+}
+
+main {
+  padding: 20px;
+}
+
+h2 {
+  color: black;
+  justify-content: center;
+}
+
+.contact {
+  text-align: center;
+  /* Centraliza o conteúdo do formulário */
+  margin: 50px auto;
+  /* Adiciona margens para centralizar verticalmente */
+  max-width: 600px;
+  /* Define a largura máxima do formulário */
+  justify-content: center;
+  text-align: center;
+}
+
+/* Estilos para o formulário de contato */
+.contact form {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-top: 15px;
+}
+
+/* Estilos para os elementos do formulário */
+.contact form label,
+.contact form input,
+.contact form textarea,
+.contact form input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact form input[type="submit"] {
+  background-color: #695cfe;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.contact form input[type="submit"]:hover {
+  background-color: #4239a5;
+}
+
+.informacoes {
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  padding: 20px;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  text-align: center;
+  /* Para centralizar o texto */
+}
+
+.info-header {
+  list-style: none;
+  margin: 0 30px;
+  /* Margem entre os elementos */
+}
+
+.info-header a {
+  color: black;
+}
+
+.info-header a:hover {
+  color: rgb(72, 72, 186);
+}

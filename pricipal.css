@@ -1,0 +1,652 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  ---body-color: #eff0f4;
+  ---sidebar-color: #fff;
+  ---primary-color: #695cfe;
+  ---primary-color-light: #f6f5ff;
+  ---toggle-color: #dddddd84;
+  ---text-color: #707070;
+
+
+  ---trans-02: # all 0.2s ease;
+  ---trans-03: # all 0.3s ease;
+  ---trans-04: # all 0.4s ease;
+  ---trans-05: # all 0.5s ease;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+.informacoes {
+  display: flex;
+  justify-content: center;
+  /* Centraliza horizontalmente */
+  align-items: center;
+  /* Centraliza verticalmente */
+  padding: 20px;
+  background-color: #fbfbfb;
+  border-radius: 3px;
+  text-align: center;
+  /* Para centralizar o texto */
+}
+
+.info-header {
+  list-style: none;
+  margin: 0 30px;
+  /* Margem entre os elementos */
+}
+
+.info-header a {
+  color: black;
+}
+
+.info-header a:hover {
+  color: rgb(72, 72, 186);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.wrapper i {
+  top: 50%;
+  height: 45px;
+  width: 45px;
+  background: #fff;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  transform: translateY(-50%);
+  position: absolute;
+  cursor: pointer;
+}
+
+.wrapper i:first-child {
+  left: -89px;
+}
+
+.wrapper i:last-child {
+  right: -60px;
+}
+
+.wrapper .carousel {
+  white-space: nowrap;
+  font-size: 0px;
+  overflow: hidden;
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* Suaviza o scrolling no iOS Safari */
+  gap: 10px; /* Espaço horizontal entre as imagens */
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+.carousel img {
+  flex-shrink: 0;
+  width: 100px; /* Largura das imagens do carousel */
+  height: 120px; /* Altura das imagens do carousel */
+  margin-right: 10px; /* Espaço entre as imagens */
+}
+.carousel img:first-child {
+  margin-left: 0px;
+}
+.carousel-container {
+  width: 80%; /* Defina a largura desejada para o container */
+  margin: 0 auto; /* Isso centralizará o container */
+}
+body {
+  min-height: 100vh;
+  height: 100vh;
+  background: var(---body-color);
+  transition: var(---trans-04);
+}
+
+body.dark {
+  ---body-color: #18191A;
+  ---sidebar-color: #242526;
+  ---primary-color: #3A3B3C;
+  ---primary-color-light: #3A3B3C;
+  ---toggle-color: #fff;
+  ---text-color: #CCC;
+}
+
+/* === Config. da logo */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(---sidebar-color);
+  transition: var(---trans-05);
+  z-index: 100;
+}
+
+.sidebar.close {
+  width: 88px;
+  /*transition: var(---trans-04)*/
+}
+
+/* === responsividade === */
+/*.sidebar{
+  width: 88px;
+  overflow: visible;
+}*/
+.sidebar .text {
+  font-size: 16px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+.sidebar.image {
+  min-width: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar li {
+  height: 50px;
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.sidebar li .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  font-size: 20px;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+  color: var(---text-color);
+}
+
+.sidebar .header-menu {
+  position: relative;
+}
+
+.sidebar .image-text img {
+  width: 40px;
+  border-radius: 6px;
+}
+
+.sidebar .header-menu .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu .image-text .header-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* remover .header-text quando nav estiver fechada*/
+.close .image-text .header-text {
+  display: none;
+}
+
+.header-text .name {
+  font-weight: 600;
+  margin-left: 20px;
+  color: var(---text-color);
+}
+
+.sidebar .header-menu .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background: var(---primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(---sidebar-color);
+  font-size: 22px;
+  transition: var(---trans-04);
+}
+
+.sidebar.close .header-menu .toggle {
+  transform: translateY(-50%);
+}
+
+body.dark .sidebar .header-menu .toggle {
+  color: var(---text-color);
+}
+
+.sidebar .search-box {
+  background: var(---primary-color-light);
+}
+
+.search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  background: var(---primary-color-light);
+}
+
+.sidebar li a {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: var(---trans-04)
+}
+
+.sidebar li a:hover {
+  background: var(---primary-color);
+}
+
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: var(---sidebar-color);
+}
+
+.sidebar li a:hover .O,
+.sidebar li a:hover .text {
+  color: var(---sidebar-color);
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-bar .mode {
+  position: relative;
+  background: var(---primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+  height: 50px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.menu-bar .mode i {
+  position: absolute;
+  transition: var(---trans-03);
+  border-radius: 6px;
+}
+
+.menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.sun {
+  opacity: 1;
+}
+
+body.dark .menu-bar .mode i.moon {
+  opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 60px;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  height: 22px;
+  width: 44px;
+  border-radius: 25px;
+  background: var(---toggle-color);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background: var(---sidebar-color);
+  transition: var(---trans-03);
+}
+
+body.dark .switch::before {
+  left: 24px;
+}
+
+.home {
+  position: relative;
+  left: 250px;
+  height: 100vh;
+  width: calc(100% - 250px);
+}
+
+.sidebar.close~.home {
+  left: 88px;
+  width: calc(100% - 88px);
+}
+
+main {
+  padding: 20px;
+}
+.T{
+  text-align: center;
+  margin: 10px;
+}
+
+.produtos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px; /* Defina a largura máxima dos produtos */
+  width: 100%; /* Use toda a largura disponível */
+  margin-top: 20px; /* Espaço superior */
+  margin-bottom: 20px; /* Espaço inferior */
+  margin-left: auto;
+  margin-right: auto; /* Centraliza horizontalmente */
+}
+
+.produtos h3{
+  text-align: center;
+  font-size: 18px;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-left: 30px;
+  /* Espaço entre os produtos */
+}
+
+.product-item {
+  flex-basis: calc(20% - 20px);
+  /* Calcula o tamanho dos produtos para ocuparem metade do espaço disponível */
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #CCC;
+}
+.product-item p{
+  text-align: center;
+}
+
+.product-item a {
+  text-decoration: none;
+  color: black;
+}
+
+.product-item:hover {
+  border: 2px solid darkblue;
+  cursor: pointer;
+}
+
+.product-item img {
+  width: 170px;
+  height: 170px;
+  margin: auto;
+}
+
+.button-carrinho {
+  background-color: rgb(30, 149, 30);
+  cursor: pointer;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.button-carrinho:hover {
+  background-color: darkgreen;
+}
+
+/* Botão para remover do carrinho */
+.button-carrinho.remover {
+  background-color: red;
+  color: white;
+  /* Defina a cor do texto para garantir visibilidade */
+  /* Outros estilos desejados para o botão de remover do carrinho */
+}
+
+.button-carrinho.remover:hover {
+  background-color: rgb(198, 32, 32);
+}
+
+h2 {
+  color: black;
+}
+
+.T{
+  margin-left: 30px;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: rgb(72, 72, 186);
+  text-align: center;
+  padding: 30px;
+  margin-top: 25%;
+  border-radius: 6px;
+}
+
+.rodape {
+  padding: 50px;
+}
+
+.rodape-flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+.rodape-itens {
+  width: 25%;
+  padding: 0 15px;
+}
+.rodape-itens ul {
+  list-style: none;
+}
+.rodape-itens ul li {
+  margin: 10px 0;
+}
+.rodape-itens ul li a {
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
+.rodape a:hover{
+  color: white;
+  transition: 0.5s;
+}
+@media (max-width: 1333px){
+  .produtos h3{
+    font-size: 15px;
+  }
+}
+@media (max-width: 1227px){
+  .button-carrinho{
+    font-size: 10px;
+  }
+}
+@media (max-width: 1203px) {
+  .product-item {
+    flex-basis: calc(25% - 20px); /* 25% para exibir 4 produtos por linha */
+  }
+}
+@media (max-width: 1061px) {
+  .info-header {
+    font-size: 14px; /* Define o tamanho da fonte para 14 pixels */
+  }
+
+  .info-header a {
+    font-size: 14px; /* Define o tamanho da fonte dos links para 14 pixels */
+  }
+}
+@media (max-width: 1015px) {
+  .product-item {
+    flex-basis: calc(33.33% - 20px); /* 33.33% para exibir 3 produtos por linha */
+  }
+}
+  @media (max-width: 1005px) {
+    .info-header{
+      font-size: 10px;
+    }
+    .info-header a{
+      font-size: 10px;
+    }
+}
+@media (max-width: 900px) {
+  .carousel {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .wrapper i {
+    font-size: 1rem; /* Reduz o tamanho das setas */
+  }
+
+  .carousel img {
+    max-width: 100%; /* Garante que as imagens se ajustem ao tamanho do carousel */
+    height: auto;
+  }
+    .wrapper i:first-child {
+      left: -5px; /* Ajusta a posição da seta esquerda */
+    }
+  
+    .wrapper i:last-child {
+      right: -5px; /* Ajusta a posição da seta direita */
+    }
+}
+  @media (max-width: 800px){
+    .info-header{
+      margin: 0 8px;
+    }
+  }
+
+  @media (max-width: 776px) {
+    .product-item {
+        width: calc(50% - 20px);
+
+    }
+}
+@media (max-width: 768px) {
+  .informacoes {
+    padding: 10px; /* Reduz o padding para economizar espaço */
+  }
+
+  .info-header {
+    margin-bottom: 8px; /* Adiciona espaço entre os itens */
+  }
+}
+
+
+@media (max-width: 650px){
+  .carousel img{
+    width: 80px;
+    height: auto;
+  }
+}
+@media (max-width: 575px) {
+  .product-item {
+    flex-basis: calc(100% - 20px); /* 100% para exibir 1 produto por linha */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+}
+@media (max-width: 562px){
+  .carousel img{
+    width: 65px;
+    height: auto;
+  }
+  .wrapper i:first-child {
+    left: -2px; /* Ajusta a posição da seta esquerda */
+  }
+
+  .wrapper i:last-child {
+    right: -2px; /* Ajusta a posição da seta direita */
+  }
+  .wrapper i {
+    font-size: 0.5rem;
+  }
+}
+@media (max-width: 500px){
+  .carousel img{
+    width: 55px;
+    height: auto;
+  }
+  .wrapper i:first-child {
+    left: 0px; /* Ajusta a posição da seta esquerda */
+  }
+
+  .wrapper i:last-child {
+    right: 0px; /* Ajusta a posição da seta direita */
+  }
+
+}
+@media (max-width: 420px){
+  .carousel img{
+    width: 30px;
+    height: auto;
+  }
+  .wrapper i:first-child {
+    left: 0px; /* Ajusta a posição da seta esquerda */
+  }
+  
+  .wrapper i:last-child {
+    right: 0px; /* Ajusta a posição da seta direita */
+  }
+  .wrapper i{
+    width: 20px;
+    height: 20px;
+  }
+  .info-header{
+    font-size: 7px;
+  }
+  .info-header a{
+    font-size: 7px;
+  }
+  
+}
+
+
+/*fim */

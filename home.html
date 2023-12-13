@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pricipal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Clube do Tênis</title>
+    <link rel="shortcut icon" href="Imagens/iconnnnnnn.jpg" type="image/x-icon">
+</head>
+
+<body>
+    <header class="informacoes">
+        <li class="info-header">(47)9 99652920</li>
+        <li class="info-header">Endereço: Joinville-SC, Rua Paulo Schneider - Boehmerwald</li>
+        <li class="info-header"><a href="atendimento.html">Atendimento/Dúvidas</a></li>
+    </header>
+    <nav class="sidebar close">
+        <header class="header-menu">
+            <div class="image-text">
+                <span class="image">
+                    <img src="Imagens/tenis-casual-de-perfil-baixo-859103_800x.webp" alt="logo">
+                </span>
+                <div class="header-text">
+                    <span class="name">Clube do Tênis</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle '></i> <!-- Botão aside -->
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <i class='bx bx-search-alt icon'></i>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="home.html">
+                            <i class='bx bx-home-alt icon'></i>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="Lançamentos.html">
+                            <i class='bx bx-rocket icon'></i>
+                            <span class="text nav-text">Lançamentos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="promoções.html">
+                            <i class='bx bx-dollar-circle icon'></i>
+                            <span class="text nav-text">Promoções</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="Mais Usados.html">
+                            <i class='bx bx-objects-vertical-bottom icon'></i>
+                            <span class="text nav-text">Mais Usados</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="Mais Usados.html">
+                            <i class='bx bx-zoom-in icon'></i>
+                            <span class="text nav-text">Mais Procurados</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon'></i>
+                        <span class="text nav-text">Sair</span>
+                    </a>
+                </li>
+                <li class="mode">
+                    <div class="moon-sun"></div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                    <!-- Construção do Dark Mode -->
+                </li>
+            </div>
+        </div>
+    </nav>
+    <section class="home">
+        <main>
+            <div class="wrapper">
+                <i class="fas fa-angle-left" id="prevBtn"></i>
+                <div class="carousel" id="imageSlider">
+                    <img src="Imagens/adidas-logo.webp" alt="">
+                    <img src="Imagens/hockey-logo.webp" alt="">
+                    <img src="Imagens/logo-jordan.webp" alt="">
+                    <img src="Imagens/logo-nb.webp" alt="">
+                    <img src="Imagens/nike-logo.webp" alt="">
+                    <img src="Imagens/obey-logo.webp" alt="">
+                    <img src="Imagens/puma-logo.webp" alt="">
+                    <img src="Imagens/staple-logo.webp" alt="">
+                    <img src="Imagens/stussy-logo.webp" alt="">
+                    <img src="Imagens/vans-logo.webp" alt="">
+                </div>
+                <i class="fas fa-angle-right" id="nextBtn"></i>
+            </div>
+            <h2 class="T">Nossos Produtos</h2>
+            <div class="produtos">
+                <div class="products-container">
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Hocks Bold Petitpoa</h3>
+                        </a>
+                        <a href=""><img src="Imagens/hocks.png" alt="Tênis 1"></a>
+                        <a href="">
+                            <p>Preço: R$ 99,99</p>
+                        </a>
+                        <button id="button-1" onclick="adicionarAoCarrinho(1)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Tesla Hertz</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/tesla.png"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-2" onclick="adicionarAoCarrinho(2)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Tenis ADI2000</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/adi2000.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-3" onclick="adicionarAoCarrinho(3)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Air Jordan 1 Low</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/air-jordan-1-low.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-4" onclick="adicionarAoCarrinho(4)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>New Balance 550</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/nb550 (1).png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-5" onclick="adicionarAoCarrinho(5)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Nike TN Plus</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/nikeTN.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-6" onclick="adicionarAoCarrinho(6)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Puma Slipstream</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/slipstream.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-7" onclick="adicionarAoCarrinho(7)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Puma Suede Staple</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/tenis-staple.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-8" onclick="adicionarAoCarrinho(8)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Nike AirZoom Stussy</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/airzoom-stusssy.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-9" onclick="adicionarAoCarrinho(9)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Vans Old School</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/old-skool.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-10" onclick="adicionarAoCarrinho(10)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Vans KNU School</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/knu-school.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-11" onclick="adicionarAoCarrinho(11)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Adidas Forum Low</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/forum-low.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-12" onclick="adicionarAoCarrinho(12)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Air Jordan 4</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/air-jordan-4.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-13" onclick="adicionarAoCarrinho(13)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Adidas Campus 00s</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/campus.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-14" onclick="adicionarAoCarrinho(14)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                    <div class="product-item">
+                        <a href="">
+                            <h3>Nike Dunk Low</h3>
+                        </a>
+                        <a href=""><img src="/Imagens/dunk.png" alt="Tênis 2"></a>
+                        <a href="">
+                            <p>Preço: R$ 129,99</p>
+                        </a>
+                        <button id="button-15" onclick="adicionarAoCarrinho(15)" class="button-carrinho">Adicionar ao
+                            Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z0LTb8M+1vL1x2aW+EAd6aH/w0vcZk2CK8Hzg7"
+            crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+            <footer>
+                <div class="rodape">
+                  <div class="rodape-flex">
+                    <div class="rodape-itens">
+                      <h2>Criador</h2>
+                      <ul>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Quem nós somos</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Quem nós somos </a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Quem nós somos</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Quem nós somos </a> </li>
+                      </ul>
+                    </div>
+            
+                    <div class="rodape-itens">
+                      <h2>Ajuda</h2>
+                      <ul>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Ajuda</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Ajuda</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Ajuda</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Ajuda</a></li>
+                      </ul>
+                    </div>
+            
+                    <div class="rodape-itens">
+                      <h2>Mais informações</h2>
+                      <ul>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Mais informações</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Mais informações</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Mais informações</a> </li>
+                        <li> <a href="https://github.com/Henrique0330" target="_blank">Mais informações</a> </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+    </section>
+</body>
+
+</html>
